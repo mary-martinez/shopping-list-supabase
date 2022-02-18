@@ -26,7 +26,7 @@ async function displayItems() {
         });
         listEl.append(newItem);
     }
-};
+}
 
 displayItems();
 
