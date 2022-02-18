@@ -28,7 +28,7 @@ async function displayItems() {
     }
 };
 
-await displayItems();
+displayItems();
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
