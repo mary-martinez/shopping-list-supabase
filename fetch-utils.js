@@ -42,6 +42,10 @@ export async function fetchItems() {
     // console.log(resp);
     return checkError(resp);
 }
+export async function createItem(item) {
+    const resp = await client.from('shopping').insert({ item });
+    return checkError(resp);
+}
 
 function checkError({ data, error }) {
     return error ? console.error(error) : data;
