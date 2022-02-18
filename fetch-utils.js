@@ -47,6 +47,16 @@ export async function createItem(item) {
     return checkError(resp);
 }
 
+export async function buyItem(id) {
+    const resp = await client.from('shopping').update({ complete: true }).match({ id });
+    return checkError(resp);
+}
+
+export async function deleteAllItems() {
+    const resp = await client.from('shopping').delete().match({ user_id: client.auth.user().id });
+    return checkError(resp);
+}
+
 function checkError({ data, error }) {
     return error ? console.error(error) : data;
 }
